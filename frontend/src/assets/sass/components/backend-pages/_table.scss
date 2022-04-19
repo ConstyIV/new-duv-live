@@ -1,0 +1,186 @@
+$duv-td-line-height: 1.8;
+
+.table__no-border th,
+.table__no-border td,
+.table__no-border thead th {
+  border-color: transparent !important;
+}
+
+.table-dark th,
+.table-dark td,
+.table-dark thead th {
+  border-color: rgba($text-color, 0.2);
+}
+
+.table-dark.table-border--x td {
+  border-top: 1px solid rgba($text-color, 0.2) !important;
+  border-bottom: 1px solid rgba($text-color, 0.2) !important;
+}
+
+.table th,
+.table td {
+  line-height: $duv-td-line-height;
+}
+
+.table__with-bg {
+  border-collapse: separate;
+  border-spacing: 0 0.35rem;
+  @include media-breakpoint-up(sm) {
+    border-spacing: 0 0.7rem;
+  }
+  tr {
+    background-color: rgba($admin-card-bg, 0.3) !important;
+    padding: 5px;
+
+    // basically for headings
+    &.transparent {
+      background-color: transparent !important;
+      margin-bottom: 2rem;
+      padding: 0;
+      h4 {
+        @include media-breakpoint-up(md) {
+          margin-left: -1rem;
+        }
+        line-height: 1;
+        margin-bottom: 0;
+        margin-top: 1rem;
+        font-size: 1rem;
+      }
+
+      td {
+        padding: 0;
+      }
+    }
+
+    &.tr-success {
+      background-color: rgba(darken($green-200, 10), 0.05) !important;
+    }
+
+    &.tr-error {
+      background-color: rgba(darken($red-200, 15), 0.09) !important;
+    }
+
+    th,
+    td {
+      padding-top: 0.8rem;
+      @include media-breakpoint-up(sm) {
+        padding-top: 1.2rem;
+      }
+    }
+
+    th:first-child,
+    td:first-child {
+      border-radius: 5px 0 0 5px;
+      padding-left: 5px;
+      @include media-breakpoint-up(sm) {
+        padding-left: 20px;
+      }
+      vertical-align: middle;
+    }
+
+    td:last-child {
+      border-radius: 0 5px 5px 0;
+      padding-right: 20px;
+    }
+
+    td:first-child {
+      font-weight: normal;
+    }
+  }
+}
+
+.table {
+  font-size: 0.75rem;
+  @include media-breakpoint-up(sm) {
+    font-size: 0.9rem;
+  }
+  &__number {
+    font-size: 1.2rem;
+    line-height: $duv-td-line-height;
+    color: #394046;
+  }
+
+  &__title {
+    font-weight: normal;
+    margin: 0;
+    line-height: $duv-td-line-height;
+  }
+
+  span:not(.duvlive-modal):not(.icon) {
+    font-size: 0.8rem;
+    display: block;
+    line-height: $duv-td-line-height;
+  }
+
+  .td-btn {
+    width: 9rem;
+  }
+
+  .circle {
+    width: 1rem;
+    height: 1rem;
+    background: $text-color;
+    display: inline-block;
+    margin-right: 0.3rem;
+    border-radius: 50%;
+
+    &.red {
+      background: $red-300;
+    }
+
+    &.yellow {
+      background: $yellow;
+    }
+
+    &.blue {
+      background: $blue;
+    }
+
+    &.green {
+      background: $green-300;
+    }
+  }
+
+  &-heading {
+    font-size: 1rem;
+    color: $text-color;
+  }
+}
+
+// loops through 20 times
+// @for $i from 1 through 20 {
+//   .tw-#{$i} {
+//     width: percentage($i/20);
+//   }
+// }
+
+.table-responsive {
+  td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .table th,
+  .table td {
+    padding: 0.5rem;
+  }
+}
+
+tr.strikethrough {
+  text-decoration: line-through;
+
+  .no-strikethrough {
+    text-decoration: none !important;
+  }
+}
+
+tr.tr__transparent {
+  background-color: transparent !important;
+}
+
+.tr__condensed td {
+  padding: 1.5rem 0 0 !important;
+}

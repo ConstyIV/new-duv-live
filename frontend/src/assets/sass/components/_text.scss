@@ -1,0 +1,159 @@
+.title-border {
+  span {
+    color: $red-300;
+  }
+  &.best-life {
+    span {
+      color: $white;
+      font-size: 3.5rem;
+      text-transform: uppercase;
+    }
+  }
+  &:after {
+    content: ''; /* This is necessary for the pseudo element to work. */
+    display: block; /* This will put the pseudo element on its own line. */
+    width: 3rem; /* Change this to whatever width you want to have before hover. */
+    padding-top: 1.25rem; /* This creates some space between the element and the border. */
+    border-bottom: 2px solid white; /* This creates the border. Replace black with whatever color you want. */
+    transition: all 0.2s ease-out; /* This establishes the amount of time in seconds the animation should take from start to finish */
+  }
+}
+
+.header {
+  span {
+    color: $red-300;
+  }
+}
+
+// .title-border:hover:after {
+//   width: 5rem; /* This will be the new width of your border when on hover */
+// }
+
+$text-colors: (
+  'red': $danger,
+  'error': $red-100,
+  'danger': $danger,
+  'green': $green,
+  'blue': $blue,
+  'info': $blue-100,
+  'yellow': $yellow,
+  'white': $white,
+  'gray': $text-color,
+  'red-100': $red-100,
+  'red-200': $red-200,
+  'red-300': $red-300,
+  'red-400': $red-400,
+  'yellow-100': $yellow-100,
+  'yellow-200': $yellow-200,
+  'yellow-300': $yellow-300,
+  'yellow-400': $yellow-400,
+  'blue-100': $blue-100,
+  'blue-200': $blue-200,
+  'blue-300': $blue-300,
+  'blue-400': $blue-400,
+  'green-100': $green-100,
+  'green-200': $green-200,
+  'green-300': $green-300,
+  'green-400': $green-400,
+);
+
+@each $name, $code in $text-colors {
+  .text-#{$name} {
+    color: $code;
+  }
+}
+
+$sub-title: (
+  '1': 1.8rem,
+  '2': 1.5rem,
+  '3': 1.2rem,
+  '4': 1rem,
+);
+
+@each $number, $size in $sub-title {
+  .subtitle--#{$number} {
+    font-size: $size;
+    font-weight: normal;
+  }
+}
+
+$small: (
+  '1': 0.9rem,
+  '2': 0.8rem,
+  '3': 0.7rem,
+  '4': 0.6rem,
+);
+
+@each $number, $size in $small {
+  .small--#{$number} {
+    font-size: $size !important;
+    font-weight: normal;
+  }
+}
+
+a.text-muted:hover {
+  color: $red-300 !important;
+}
+
+.text-truncate--1 {
+  max-width: 8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+label {
+  width: 100%;
+  .optional {
+    margin-left: auto;
+    float: right;
+    color: $text-muted;
+  }
+}
+
+.text-negative {
+  color: rgba($red-100, 0.7);
+}
+
+.text-link {
+  color: $red-100;
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:hover {
+    color: $red;
+  }
+}
+
+.text-muted-light {
+  color: $text-muted-light;
+}
+
+.text-muted-light-2 {
+  color: $text-muted-light-2;
+}
+
+.text-font {
+  font-family: $text-font !important;
+}
+
+.header-font {
+  font-family: $headings-font !important;
+}
+
+.text-link {
+  cursor: pointer;
+  color: lighten($red, 20);
+  transition: color 0.4 ease-out;
+
+  &:hover {
+    color: $red-300;
+  }
+}
+
+.tab-header {
+  color: $red-100;
+  margin: 2rem 0;
+  font-size: 2rem;
+  font-weight: normal;
+}

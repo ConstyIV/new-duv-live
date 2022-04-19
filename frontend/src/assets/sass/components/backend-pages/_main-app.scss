@@ -1,0 +1,49 @@
+.main-app {
+  margin-top: 0.63rem;
+  padding: 2.5rem;
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: $gray-400;
+  }
+
+  &__subtitle {
+    font-size: 1.2rem;
+    font-weight: normal;
+    font-family: $font-family-sans-serif;
+    color: $text-color;
+    margin-bottom: 1rem;
+  }
+
+  &__date {
+    color: rgba($text-color, 0.2);
+    font-size: 0.8rem;
+  }
+
+  .app-content {
+    margin-top: 2rem;
+  }
+
+  &__small {
+    font-size: 0.8rem;
+  }
+}
+
+// text colors
+.text-blue {
+  color: $blue;
+}
+.text-green {
+  color: $green-100;
+}
+.text-red {
+  color: $red-100;
+}
+.text-yellow {
+  color: $yellow-100;
+}
+
+.text-gray {
+  color: $text-color;
+}

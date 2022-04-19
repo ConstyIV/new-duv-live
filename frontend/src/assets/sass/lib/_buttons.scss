@@ -1,0 +1,123 @@
+$transparent-btn-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'success': $green-300,
+  'info': $blue,
+  'warning': $warning,
+  'danger': $red-400,
+  'light': $light,
+  'dark': $dark,
+);
+
+@each $name, $code in $transparent-btn-colors {
+  .btn-#{$name}.btn-transparent {
+    background: rgba($code, 0.5);
+    border-color: rgba($code, 0.4);
+
+    &:hover {
+      background: $code;
+      border-color: $code;
+    }
+  }
+  .transparent-#{$name} {
+    color: lighten($code, 40%) !important;
+    background: rgba($code, 0.5) !important;
+    border-color: rgba($code, 0.4) !important;
+  }
+}
+
+.btn-wide {
+  padding: 0.7rem 2.5rem;
+}
+
+.btn-lg.btn-wide {
+  padding: 1.2rem 2.5rem;
+}
+
+.btn-sm {
+  &.btn-transparent {
+    padding: 0.5rem 1rem;
+  }
+}
+
+button:focus {
+  outline: none;
+}
+
+.btn-danger.hvr-sweep-to-left,
+.btn-danger.hvr-sweep-to-right {
+  &:before {
+    background: darken($red, 15%);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: darken($red, 15%);
+  }
+}
+.btn-light.hvr-sweep-to-left,
+.btn-light.hvr-sweep-to-right {
+  &:before {
+    background: darken($white, 15%);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: darken($white, 15%);
+  }
+}
+
+.menu-button {
+  width: 2.2rem;
+  padding: 0;
+  margin-right: 1rem;
+  background: transparent;
+  border: none;
+  outline: none;
+
+  &:after,
+  &:before,
+  & div {
+    background-color: $text-color;
+    content: '';
+    display: block;
+    height: 3px;
+    margin: 6px 0;
+  }
+}
+
+.input-group-prepend .btn,
+.input-group-append .btn {
+  z-index: 0;
+}
+
+// btn loading
+.btn {
+  position: relative;
+  .loading {
+    position: absolute;
+    left: 0.5rem;
+    top: 1rem;
+  }
+}
+
+.btn-warning.btn-transparent {
+  color: $white;
+}
+
+.table .nav.nav-pills {
+  margin-left: -1rem;
+}
+
+.nav-sort .nav-link {
+  font-size: 0.75rem;
+  &.active {
+    background-color: transparent;
+    color: $red-300;
+  }
+  &.nav-text {
+    padding-left: 0;
+  }
+}

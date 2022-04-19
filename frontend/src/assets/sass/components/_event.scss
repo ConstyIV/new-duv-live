@@ -1,0 +1,156 @@
+.event-card {
+  margin-bottom: 2rem;
+  height: 23rem;
+  max-height: 23rem;
+  overflow: hidden;
+
+  &__image-container {
+    position: relative;
+    height: 15rem;
+    overflow: hidden;
+  }
+
+  img {
+    object-fit: cover;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.4s ease-out;
+  }
+
+  .card-img-overlay {
+    background: rgba($black, 0.5);
+  }
+
+  .event-card__body {
+    background: $white;
+  }
+
+  &__status {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+  &__date {
+    font-size: 0.75rem;
+    color: $red-300;
+  }
+
+  &__info {
+    padding: 0 1.5rem 2rem;
+  }
+
+  &__title {
+    font-size: 1rem;
+    margin: 1rem 0 0;
+    font-family: $font-family-sans-serif;
+    color: rgba($black, 0.8);
+  }
+
+  &__address {
+    font-size: 0.75rem;
+    font-family: $headings-font-family;
+    color: $text-color;
+  }
+  &__ticket {
+    font-size: 0.8rem;
+    color: rgba($red-300, 0.7);
+    margin-bottom: 1.5rem;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.2);
+    }
+
+    .event-card {
+      &__title {
+        color: $black;
+      }
+      &__datetime {
+        background: $blue-400;
+      }
+    }
+  }
+}
+
+.single-event {
+  &__title {
+    font-size: 2rem;
+    font-weight: normal;
+  }
+
+  &__location,
+  &__date-time {
+    display: inline-block;
+    margin-right: 3rem;
+  }
+}
+
+.event-details {
+  margin-bottom: 1.5rem;
+  &__title {
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__details {
+    color: lighten($red-100, 5%);
+    font-size: 0.8rem;
+  }
+}
+
+.remaining-time {
+  font-size: 0.8rem;
+  color: $text-muted;
+  margin-top: 0.3rem;
+  display: block;
+  margin-left: -0.3rem;
+}
+
+.small-text__with-icon {
+  color: rgba(lighten($red-100, 5), 0.5);
+  font-size: 0.7rem;
+  display: block;
+  margin-top: 0.4rem;
+}
+
+.event-list-label {
+  font-size: 1rem;
+  color: darken($white, 10);
+  font-weight: normal;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  margin-top: 0.3rem;
+}
+
+.cancel-event__text {
+  color: rgba($white, 0.2);
+  transition: all 0.4s ease-in-out;
+  &:hover {
+    color: $danger;
+    cursor: pointer;
+  }
+}
+
+.transparent .list-group-item {
+  background: transparent !important;
+  border-color: rgba($white, 0.1) !important;
+}
+
+.event-title {
+  color: $white;
+  @include media-breakpoint-up(md) {
+    margin-left: -1rem;
+  }
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+
+.event-spacer {
+  margin-bottom: 5rem;
+  tr:last-child & {
+    margin-bottom: 0;
+  }
+}

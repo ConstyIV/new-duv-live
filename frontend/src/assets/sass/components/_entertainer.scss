@@ -1,0 +1,159 @@
+.entertainer-card {
+  border: none;
+  margin-bottom: 2rem;
+  height: 16rem;
+  max-height: 16rem;
+  overflow: hidden;
+
+  img {
+    display: block;
+    position: relative;
+    object-fit: cover;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.4s ease-out;
+  }
+
+  .card-img-overlay {
+    background: rgba($black, 0.5);
+  }
+
+  .card-title,
+  .entertainer_type {
+    position: absolute;
+    bottom: 0;
+    color: $white;
+    font-family: $headings-font-family;
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .entertainer_type {
+    right: 0;
+    background: rgba($black, 0.5);
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 1rem;
+    margin-right: 1.25rem;
+    font-size: 0.7rem;
+    opacity: 0.8;
+    transition: all 0.3s ease-out;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+
+    .card-img-overlay {
+      background: rgba($black, 0.3);
+    }
+
+    .entertainer_type {
+      opacity: 1;
+      background: rgba($red, 0.8);
+    }
+  }
+}
+
+.img-entertainer {
+  z-index: 5;
+  display: block;
+  left: 0;
+  top: -3rem;
+  object-fit: cover;
+  width: 100%;
+  // @include media-breakpoint-up(sm) {
+  //   position: absolute;
+  // }
+}
+
+.entertainer {
+  &__summary {
+    margin: 2rem 1rem;
+
+    &--title {
+      font-size: 2rem;
+      font-weight: normal;
+    }
+
+    &--content {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.entertainer-info {
+  background: $black;
+  background: linear-gradient(rgba($body-bg, 0.2), rgba($body-bg, 0.7)),
+    url('../img/bg/felebration.jpg');
+  background-position: center bottom;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  padding: 4rem 1rem;
+  @include media-breakpoint-up(sm) {
+    padding: 8rem 0;
+  }
+
+  &.dj {
+    background: linear-gradient(rgba($body-bg, 0.85), rgba($body-bg, 0.95)),
+      url('../img/bg/entertainer-dj.jpg');
+  }
+
+  &.mc {
+    background: linear-gradient(rgba($body-bg, 0.85), rgba($body-bg, 0.95)),
+      url('../img/bg/entertainers-counter.jpg');
+  }
+
+  &__list {
+    height: 3rem;
+    margin-bottom: 2.5rem;
+
+    h6 {
+      color: #86939e;
+      font-weight: normal;
+      font-size: 0.7rem;
+    }
+    div.small-text {
+      color: $text-muted-light;
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+    }
+
+    h3 {
+      font-weight: normal;
+      font-size: 1.4rem;
+    }
+
+    .star-rating {
+      margin-left: 0.1rem;
+      margin-top: -0.7rem;
+    }
+
+    .icon {
+      margin-left: -0.5rem;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.stars__review {
+  font-size: 2rem;
+  margin-left: -0.5rem;
+  color: #2f3440;
+
+  &--label {
+    font-size: 0.8rem !important;
+    margin-top: 0.5rem;
+  }
+}
+
+.no-entertainer-icon {
+  font-size: 5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}

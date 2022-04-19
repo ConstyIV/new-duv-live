@@ -1,0 +1,78 @@
+{
+  "name": "duvproject",
+  "version": "1.0.0",
+  "description": "A simple freelance platform for event managers and performers",
+  "main": "index.js",
+  "scripts": {
+    "start:dev:frontend": "cd frontend && npm start",
+    "start:dev:server": "rm -rf ./src-server/build && NODE_ENV=development && npx sequelize-cli db:migrate && nodemon --exec babel-node src-server/server.js",
+    "start:dev": "concurrently --kill-others-on-fail \"yarn start:dev:server\" \"yarn start:dev:frontend\"",
+    "test": "cd frontend && yarn install && yarn test -- App",
+    "test:server": "npm run seed && NODE_ENV=test jest ./**/tests/**/*.test.js",
+    "seed": "NODE_ENV=test babel-node server/tests/helpers/seedHelper.js",
+    "start": "node dist/server.js",
+    "server:debug": "babel-node server-debug.js",
+    "build:server": "babel ./src-server -d ./dist -D",
+    "build:frontend": "npm --prefix ./frontend install && npm --prefix ./frontend install --only=dev --no-shrinkwrap && npm --prefix ./frontend run build && cp -R frontend/build dist/ && cp -R frontend/build src-server",
+    "heroku-postbuild": "rm -rf ./dist && yarn run build:server && yarn run build:frontend && cd dist/server && sequelize db:migrate",
+    "reset:db": "npx sequelize-cli db:migrate:undo:all && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duv-live/duvproject.git"
+  },
+  "keywords": [
+    "Event"
+  ],
+  "author": "DUV-LIVE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/duv-live/duvproject/issues"
+  },
+  "homepage": "https://github.com/duv-live/duvproject#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.4",
+    "concurrently": "^5.0.2",
+    "eslint": "5",
+    "eslint-plugin-react": "^7.14.3",
+    "node-cron": "^2.0.3",
+    "nodemon": "^1.19.1",
+    "sequelize-cli": "^5.5.1",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "@babel/compat-data": "^7.9.0",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/runtime": "^7.7.4",
+    "@sendgrid/mail": "^7.2.4",
+    "axios": "^0.19.2",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cloudinary": "^1.19.0",
+    "date-fns": "1.30.1",
+    "dotenv": "^8.1.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-force-https": "^1.0.0",
+    "global": "^4.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "lorem-ipsum": "^2.0.3",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.2",
+    "multer-storage-cloudinary": "^2.2.1",
+    "ng-faker": "^1.3.1",
+    "nodemailer": "^6.3.0",
+    "object-path": "^0.11.4",
+    "passport": "^0.4.0",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth": "^2.0.0",
+    "pg": "^8.2.1",
+    "pg-hstore": "^2.3.3",
+    "query-string": "^6.11.1",
+    "rosie": "^2.0.1",
+    "sequelize": "^5.21.13"
+  }
+}

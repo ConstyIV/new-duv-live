@@ -1,0 +1,381 @@
+.card-custom {
+  border-radius: 3px;
+  margin-bottom: 30px;
+  background: rgba($admin-card-bg, 0.1);
+  border: 1px solid rgba($admin-card-bg, 0.3);
+  transition: all 0.3s ease-out;
+
+  &.card-form {
+    padding: 1rem;
+  }
+
+  &.card-blue {
+    background: rgba($blue, 0.1);
+    border: 1px solid rgba($blue, 0.2);
+    &--light {
+      background: rgba($blue, 0.05);
+    }
+    &.card-hover:hover {
+      background: rgba($blue-400, 0.5);
+    }
+  }
+
+  &.card-green {
+    background: rgba($green-300, 0.08);
+    border: 1px solid rgba($green-300, 0.2);
+    &--light {
+      background: rgba($green-300, 0.03);
+    }
+    &.card-hover:hover {
+      background: rgba($green-400, 0.5);
+    }
+  }
+
+  &.card-yellow {
+    background: rgba($yellow, 0.1);
+    border: 1px solid rgba($yellow, 0.2);
+    &.card-hover:hover {
+      background: rgba($yellow-400, 0.5);
+    }
+  }
+
+  &.card-red {
+    background: rgba($red, 0.08);
+    border: 1px solid rgba($red, 0.2);
+    &.card-hover:hover {
+      background: rgba($red-400, 0.5);
+    }
+  }
+
+  &.card-black {
+    background: rgba($admin-card-bg, 0.1);
+    border: 1px solid rgba($admin-card-bg, 0.3);
+    &.card-hover:hover {
+      background: rgba($black, 0.5);
+    }
+  }
+
+  .card-body {
+    padding: 1.5rem;
+  }
+
+  .card-footer,
+  .img-thumbnail {
+    background-color: transparent;
+  }
+
+  &.card-tiles {
+    padding: 0.5rem;
+  }
+
+  .spacer--tiles,
+  .spacer--tiles--1 {
+    margin-top: 2rem;
+  }
+
+  .spacer--tiles--2 {
+    margin-top: 4rem;
+  }
+
+  .spacer--tiles--3 {
+    margin-top: 6rem;
+  }
+
+  .card-title,
+  .card-subtitle {
+    font-weight: normal;
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  .card-text {
+    font-size: 0.95rem;
+    @include media-breakpoint-up(sm) {
+      font-size: 0.8rem;
+    }
+  }
+
+  .header__with-border {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid $gray-700;
+  }
+
+  &.no-br {
+    border-radius: 0;
+  }
+
+  .selection__text {
+    font-size: 1.2rem;
+    font-family: $headings-font;
+    color: darken($white, 35%);
+    text-align: center;
+    padding: 5rem 0;
+    transition: all 0.8s ease-in;
+
+    span,
+    h4 {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: darken($white, 10%);
+    }
+
+    &--description {
+      font-size: 0.8rem;
+      font-weight: normal;
+      height: 4rem;
+    }
+  }
+
+  &:hover {
+    .selection__text {
+      span,
+      h4,
+      &--description {
+        color: $white;
+      }
+    }
+  }
+
+  &.select-hire-type {
+    cursor: pointer;
+    opacity: 0.4;
+
+    h6 {
+      font-size: 0.8rem;
+    }
+
+    &.isActive {
+      border-width: 3px;
+      border-color: transparent;
+      opacity: 1;
+
+      &.card-red {
+        background: rgba($red, 0.3);
+      }
+
+      &.card-blue {
+        background: rgba($blue, 0.3);
+      }
+
+      &.card-green {
+        background: rgba($green, 0.3);
+      }
+    }
+  }
+}
+
+.dashboard__card {
+  position: relative;
+  overflow: hidden;
+
+  a {
+    color: $text-color;
+  }
+
+  &--title {
+    font-size: 1.1rem;
+    font-weight: normal;
+    font-family: $headings-font;
+  }
+
+  &--number {
+    font-size: 4rem;
+    font-family: $headings-font;
+    &.yellow {
+      color: $yellow-300;
+    }
+    &.green {
+      color: $green-300;
+    }
+    &.blue {
+      color: $blue;
+    }
+  }
+
+  &--summary {
+    font-size: 0.9rem;
+    font-family: $text-font;
+    color: $text-color;
+    &.yellow {
+      color: $yellow-100;
+    }
+    &.green {
+      color: $green-100;
+    }
+    &.blue {
+      color: $blue;
+    }
+  }
+
+  .icon.pending {
+    background: rgba($green-300, 0.3);
+    color: rgba($white, 0.7);
+  }
+
+  &--icon {
+    font-size: 8rem;
+    position: absolute;
+    right: -2rem;
+    bottom: -2.5rem;
+    color: rgba($text-color, 0.3);
+  }
+}
+
+.card-img-overlay {
+  background: rgba($black, 0.5);
+}
+
+.card__with-icon {
+  .card-img-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba($black, 0.5);
+    transition: background-color 0.4s ease-in;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba($blue, 0.1);
+      .icon-video {
+        color: rgba($white, 0.3);
+      }
+    }
+  }
+  .icon-video {
+    font-size: 4rem;
+    color: rgba($white, 0.8);
+    transition: color 0.4s ease-in;
+  }
+}
+
+.modal-full {
+  min-width: 100%;
+  margin: 0;
+}
+
+.modal-large {
+  min-width: 50%;
+}
+
+.gallery-card-image {
+  position: relative;
+  margin-bottom: 2rem;
+  img.small {
+    width: 100%;
+    height: 15rem;
+    padding: 5px 5px 0;
+    border: 1px solid $input-border-color;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  .badge {
+    position: absolute;
+    bottom: 1rem;
+    left: 2rem;
+  }
+}
+
+.delete-icon,
+.profile-icon {
+  font-size: 2rem;
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  position: absolute;
+  right: 1rem;
+  top: 0;
+
+  &.right-0 {
+    right: 0;
+  }
+}
+
+.profile-icon {
+  color: rgba($white, 0.8);
+  font-size: 1.5rem;
+}
+
+.delete-icon {
+  color: rgba($white, 0.3);
+  background: rgba($black, 0.1);
+  cursor: pointer;
+  transition: 0.3s ease-in;
+
+  &:hover {
+    color: rgba($red, 0.75);
+    background: transparent;
+  }
+}
+
+.custom-registration.card.card-custom {
+  cursor: pointer;
+  opacity: 0.7;
+
+  &.card-blue {
+    background: rgba($blue-300, 0.1);
+    &:hover {
+      background: rgba($blue-400, 0.3);
+    }
+    &.isActive,
+    &.isActive:hover {
+      background: rgba($blue-300, 0.5);
+      opacity: 1;
+    }
+  }
+
+  &.card-green {
+    background: rgba($green-300, 0.1);
+    &:hover {
+      background: rgba($green-400, 0.2);
+    }
+    &.isActive,
+    &.isActive:hover {
+      background: rgba($green-300, 0.4);
+      opacity: 1;
+    }
+  }
+
+  .selection__text {
+    font-size: 1rem;
+    font-weight: normal;
+    padding: 1.5rem;
+    text-align: center;
+    color: $white;
+    line-height: 1.5;
+  }
+}
+
+.onboarding__slides {
+  margin-top: 1.5rem;
+  border-color: transparent !important;
+  padding: 2rem 3rem 3rem !important;
+
+  h3 {
+    font-weight: normal;
+  }
+  p {
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    font-size: 1.1rem;
+    color: lighten($text-color, 15%);
+  }
+
+  button {
+    background: transparent;
+    border: transparent;
+    color: rgba(darken($white, 20%), 0.5);
+    transition: all 0.3s ease-out;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  .carousel-indicators li {
+    width: 0.6rem;
+    height: 0.6rem;
+  }
+}
